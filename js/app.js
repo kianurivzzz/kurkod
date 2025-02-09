@@ -201,7 +201,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			qrContainerWrapper.classList.remove('active');
 			return;
 		}
+
 		createQRCodeWithLogo(text);
+		// Add to history only if not generated from history
+		if (window.qrHistory && !window.fromHistory) {
+			window.qrHistory.addItem(text);
+		}
+		// Reset the flag
+		window.fromHistory = false;
 	}
 
 	function downloadQRCode() {

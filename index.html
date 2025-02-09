@@ -124,6 +124,13 @@
                 <div id="qr-code" role="img" aria-label="Сгенерированный QR-код"></div>
                 <button id="download-btn" class="hidden" data-translate="download">Скачать QR-код</button>
             </section>
+            <section class="history-container hidden" aria-label="История генераций">
+                <div class="history-header">
+                    <h2 data-translate="historyTitle">История</h2>
+                    <button id="clear-history-btn" class="text-button" data-translate="clearHistory">Очистить</button>
+                </div>
+                <div id="history-list" class="history-list"></div>
+            </section>
             <section class="like-service hidden" aria-label="Оценить сервис">
                 <button id="like-service-btn" class="like-btn" data-translate="likeService">Нравится сервис?</button>
                 <div id="like-options" class="like-options hidden">
@@ -162,6 +169,7 @@
     </div>
     <script src="js/translations.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/history.js"></script>
     <script src="js/app.js"></script>
     <script src="js/like-service.js"></script>
     <a href="https://github.com/kianurivzzz/kurkod" target="_blank" rel="noopener" class="github-button"

@@ -21,6 +21,13 @@
 			haveQuestions: 'Есть вопросы',
 			linkCopied: 'Ссылка скопирована в буфер обмена!',
 			viewSource: 'Исходный код',
+			// History translations
+			historyTitle: 'История',
+			clearHistory: 'Очистить',
+			emptyHistory: 'История пуста',
+			deleteItem: 'Удалить',
+			today: 'Сегодня',
+			yesterday: 'Вчера'
 		},
 		en: {
 			title: 'Kurkod - Simple QR Code Generator',
@@ -43,6 +50,13 @@
 			haveQuestions: 'Have questions',
 			linkCopied: 'Link copied to clipboard!',
 			viewSource: 'Source code',
+			// History translations
+			historyTitle: 'History',
+			clearHistory: 'Clear',
+			emptyHistory: 'History is empty',
+			deleteItem: 'Delete',
+			today: 'Today',
+			yesterday: 'Yesterday'
 		},
 	};
 })();
