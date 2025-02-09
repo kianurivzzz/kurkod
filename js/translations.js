@@ -5,7 +5,7 @@
 			placeholder: 'Введите текст или URL',
 			generate: 'Создать QR-код',
 			download: 'Скачать QR-код',
-			copyright: ' 2024 Kurkod. Бесплатный генератор QR-кодов.',
+			copyright: ' 2024-2025 Kurkod. Бесплатный генератор QR-кодов.',
 			developer: 'Разработано',
 			name: 'Никитой Карасёвым',
 			webDev: 'Разработка веб-сервисов',
@@ -20,13 +20,14 @@
 			shareWithFriends: 'Поделиться с друзьями',
 			haveQuestions: 'Есть вопросы',
 			linkCopied: 'Ссылка скопирована в буфер обмена!',
+			viewSource: 'Исходный код',
 		},
 		en: {
 			title: 'Kurkod - Simple QR Code Generator',
 			placeholder: 'Enter text or URL',
 			generate: 'Generate QR Code',
 			download: 'Download QR Code',
-			copyright: ' 2024 Kurkod. Free QR Code Generator.',
+			copyright: ' 2024-2025 Kurkod. Free QR Code Generator.',
 			developer: 'Developed by',
 			name: 'Nikita Karasyov',
 			webDev: 'Web Development',
@@ -41,6 +42,7 @@
 			shareWithFriends: 'Share with friends',
 			haveQuestions: 'Have questions',
 			linkCopied: 'Link copied to clipboard!',
+			viewSource: 'Source code',
 		},
 	};
 })();

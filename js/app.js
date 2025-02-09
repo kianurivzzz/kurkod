@@ -97,22 +97,54 @@ document.addEventListener('DOMContentLoaded', () => {
 			// Создаем временный canvas для объединения QR-кода и логотипа
 			const canvas = document.createElement('canvas');
 			const qrSize = qr.getModuleCount();
-			const scale = 10; // Размер каждого модуля QR-кода
-			canvas.width = qrSize * scale;
-			canvas.height = qrSize * scale;
+			const scale = 20; // Увеличили размер каждого модуля с 10 до 20
+			const padding = Math.floor(scale * 0.75); // Добавляем отступ для закруглений
+			canvas.width = qrSize * scale + (padding * 2);
+			canvas.height = qrSize * scale + (padding * 2);
 
 			const ctx = canvas.getContext('2d');
+			ctx.imageSmoothingEnabled = true;
+			ctx.imageSmoothingQuality = 'high';
 
-			// Рисуем белый фон
+			// Рисуем белый фон с закруглёнными краями
 			ctx.fillStyle = '#FFFFFF';
-			ctx.fillRect(0, 0, canvas.width, canvas.height);
+			const radius = scale; // Радиус закругления углов
+			ctx.beginPath();
+			ctx.moveTo(radius, 0);
+			ctx.lineTo(canvas.width - radius, 0);
+			ctx.quadraticCurveTo(canvas.width, 0, canvas.width, radius);
+			ctx.lineTo(canvas.width, canvas.height - radius);
+			ctx.quadraticCurveTo(canvas.width, canvas.height, canvas.width - radius, canvas.height);
+			ctx.lineTo(radius, canvas.height);
+			ctx.quadraticCurveTo(0, canvas.height, 0, canvas.height - radius);
+			ctx.lineTo(0, radius);
+			ctx.quadraticCurveTo(0, 0, radius, 0);
+			ctx.closePath();
+			ctx.fill();
 
-			// Рисуем QR-код
+			// Рисуем QR-код с антиалиасингом
+			ctx.beginPath();
 			for (let row = 0; row < qrSize; row++) {
 				for (let col = 0; col < qrSize; col++) {
 					if (qr.isDark(row, col)) {
+						const x = col * scale + padding;
+						const y = row * scale + padding;
+						const size = scale * 0.95; // Немного уменьшаем размер точек для лучшего вида
+						const dotRadius = scale * 0.1; // Радиус закругления точек
+
 						ctx.fillStyle = '#000000';
-						ctx.fillRect(col * scale, row * scale, scale, scale);
+						ctx.beginPath();
+						ctx.moveTo(x + dotRadius, y);
+						ctx.lineTo(x + size - dotRadius, y);
+						ctx.quadraticCurveTo(x + size, y, x + size, y + dotRadius);
+						ctx.lineTo(x + size, y + size - dotRadius);
+						ctx.quadraticCurveTo(x + size, y + size, x + size - dotRadius, y + size);
+						ctx.lineTo(x + dotRadius, y + size);
+						ctx.quadraticCurveTo(x, y + size, x, y + size - dotRadius);
+						ctx.lineTo(x, y + dotRadius);
+						ctx.quadraticCurveTo(x, y, x + dotRadius, y);
+						ctx.closePath();
+						ctx.fill();
 					}
 				}
 			}
@@ -123,21 +155,29 @@ document.addEventListener('DOMContentLoaded', () => {
 			const logoY = (canvas.height - logoSize) / 2;
 
 			// Создаем белый фон под логотипом
-			const padding = Math.floor(logoSize * 0.1); // 10% padding
+			const logoPadding = Math.floor(logoSize * 0.15); // Увеличили padding для логотипа
 			ctx.fillStyle = '#FFFFFF';
-			ctx.fillRect(
-				logoX - padding,
-				logoY - padding,
-				logoSize + padding * 2,
-				logoSize + padding * 2
-			);
+			// Рисуем закруглённый фон под логотипом
+			const logoBackRadius = logoPadding;
+			ctx.beginPath();
+			ctx.moveTo(logoX - logoPadding + logoBackRadius, logoY - logoPadding);
+			ctx.lineTo(logoX + logoSize + logoPadding - logoBackRadius, logoY - logoPadding);
+			ctx.quadraticCurveTo(logoX + logoSize + logoPadding, logoY - logoPadding, logoX + logoSize + logoPadding, logoY - logoPadding + logoBackRadius);
+			ctx.lineTo(logoX + logoSize + logoPadding, logoY + logoSize + logoPadding - logoBackRadius);
+			ctx.quadraticCurveTo(logoX + logoSize + logoPadding, logoY + logoSize + logoPadding, logoX + logoSize + logoPadding - logoBackRadius, logoY + logoSize + logoPadding);
+			ctx.lineTo(logoX - logoPadding + logoBackRadius, logoY + logoSize + logoPadding);
+			ctx.quadraticCurveTo(logoX - logoPadding, logoY + logoSize + logoPadding, logoX - logoPadding, logoY + logoSize + logoPadding - logoBackRadius);
+			ctx.lineTo(logoX - logoPadding, logoY - logoPadding + logoBackRadius);
+			ctx.quadraticCurveTo(logoX - logoPadding, logoY - logoPadding, logoX - logoPadding + logoBackRadius, logoY - logoPadding);
+			ctx.closePath();
+			ctx.fill();
 
 			// Рисуем логотип
 			ctx.drawImage(logo, logoX, logoY, logoSize, logoSize);
 
-			// Преобразуем canvas в изображение
+			// Преобразуем canvas в изображение с высоким качеством
 			const qrImage = new Image();
-			qrImage.src = canvas.toDataURL('image/png');
+			qrImage.src = canvas.toDataURL('image/png', 1.0); // Максимальное качество
 			qrImage.classList.add('fade-in');
 
 			// Очищаем и обновляем контейнер
