@@ -123,6 +123,48 @@
             <section class="qr-container" aria-label="QR-код">
                 <div id="qr-code" role="img" aria-label="Сгенерированный QR-код"></div>
                 <button id="download-btn" class="hidden" data-translate="download">Скачать QR-код</button>
+                <button id="customize-btn" class="hidden text-button" data-translate="customize">Настроить</button>
+                
+                <div id="customize-panel" class="customize-panel hidden">
+                    <div class="customize-header">
+                        <h3 data-translate="customizeTitle">Настройка QR-кода</h3>
+                        <button class="close-btn" aria-label="Закрыть">×</button>
+                    </div>
+                    <div class="customize-options">
+                        <div class="customize-section">
+                            <label data-translate="logoLabel">Логотип:</label>
+                            <div class="logo-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="logo" value="default" checked>
+                                    <span data-translate="defaultLogo">Курица</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="logo" value="custom">
+                                    <span data-translate="customLogo">Свой логотип</span>
+                                </label>
+                                <input type="file" id="logo-upload" class="hidden" accept="image/*">
+                                <button id="upload-btn" class="secondary-btn hidden" data-translate="uploadLogo">Загрузить</button>
+                            </div>
+                        </div>
+                        <div class="customize-section">
+                            <label data-translate="colorsLabel">Цвета:</label>
+                            <div class="color-options">
+                                <div class="color-picker">
+                                    <label data-translate="dotsColor">Цвет точек:</label>
+                                    <input type="color" id="dots-color" value="#000000">
+                                </div>
+                                <div class="color-picker">
+                                    <label data-translate="backgroundColor">Цвет фона:</label>
+                                    <input type="color" id="bg-color" value="#FFFFFF">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="customize-actions">
+                        <button id="apply-custom" class="primary-btn" data-translate="apply">Применить</button>
+                        <button id="reset-custom" class="secondary-btn" data-translate="reset">Сбросить</button>
+                    </div>
+                </div>
             </section>
             <section class="history-container hidden" aria-label="История генераций">
                 <div class="history-header">
@@ -170,6 +212,7 @@
     <script src="js/translations.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/history.js"></script>
+    <script src="js/customize.js"></script>
     <script src="js/app.js"></script>
     <script src="js/like-service.js"></script>
     <a href="https://github.com/kianurivzzz/kurkod" target="_blank" rel="noopener" class="github-button"

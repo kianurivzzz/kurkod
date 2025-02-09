@@ -27,7 +27,19 @@
 			emptyHistory: 'История пуста',
 			deleteItem: 'Удалить',
 			today: 'Сегодня',
-			yesterday: 'Вчера'
+			yesterday: 'Вчера',
+			// Customization translations
+			customize: 'Настроить',
+			customizeTitle: 'Настройка QR-кода',
+			logoLabel: 'Логотип',
+			defaultLogo: 'Курица',
+			customLogo: 'Свой логотип',
+			uploadLogo: 'Загрузить',
+			colorsLabel: 'Цвета',
+			dotsColor: 'Цвет точек',
+			backgroundColor: 'Цвет фона',
+			apply: 'Применить',
+			reset: 'Сбросить'
 		},
 		en: {
 			title: 'Kurkod - Simple QR Code Generator',
@@ -56,7 +68,19 @@
 			emptyHistory: 'History is empty',
 			deleteItem: 'Delete',
 			today: 'Today',
-			yesterday: 'Yesterday'
+			yesterday: 'Yesterday',
+			// Customization translations
+			customize: 'Customize',
+			customizeTitle: 'QR Code Customization',
+			logoLabel: 'Logo',
+			defaultLogo: 'Chicken',
+			customLogo: 'Custom Logo',
+			uploadLogo: 'Upload',
+			colorsLabel: 'Colors',
+			dotsColor: 'Dots Color',
+			backgroundColor: 'Background Color',
+			apply: 'Apply',
+			reset: 'Reset'
 		},
 	};
 })();
