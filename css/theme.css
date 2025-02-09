@@ -1,0 +1,50 @@
+/* Класс для плавных переходов при смене темы */
+.theme-transition,
+.theme-transition *,
+.theme-transition *:before,
+.theme-transition *:after {
+	transition: all 0.3s ease-in-out !important;
+	transition-delay: 0 !important;
+}
+
+[data-theme="dark"] {
+	/* Тёмная тема */
+	--bg-primary: #1d1d1f;
+	--bg-secondary: #2d2d2f;
+	--text-primary: #f5f5f7;
+	--text-secondary: #a1a1a6;
+	--border-color: #424245;
+	--button-primary: #0a84ff;
+	--button-hover: #0591ff;
+	--button-success: #30d158;
+	--button-success-hover: #32d75c;
+	--shadow-color: rgba(0, 0, 0, 0.3);
+	--focus-shadow: rgba(10, 132, 255, 0.3);
+
+	/* Like service buttons */
+	--like-primary: #ff9f0a;
+	--like-primary-hover: #ffb340;
+	--like-thanks: #ff375f;
+	--like-thanks-hover: #ff4f75;
+	--like-share: #bf5af2;
+	--like-share-hover: #c76df4;
+	--like-questions: #64d2ff;
+	--like-questions-hover: #70d7ff;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		/* Системная тёмная тема */
+		--bg-primary: #1d1d1f;
+		--bg-secondary: #2d2d2f;
+		--text-primary: #f5f5f7;
+		--text-secondary: #a1a1a6;
+		--border-color: #424245;
+		--button-primary: #0a84ff;
+		--button-hover: #0591ff;
+		--button-success: #30d158;
+		--button-success-hover: #32d75c;
+		--shadow-color: rgba(0, 0, 0, 0.3);
+		--focus-shadow: rgba(10, 132, 255, 0.3);
+	}
+}

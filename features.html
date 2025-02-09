@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurkod - Возможности</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="features-container">
+        <a href="index.html" class="back-link">Вернуться на главную</a>
+        <h1 class="page-title">Возможности Kurkod</h1>
+
+        <div class="feature-grid">
+            <div class="feature-card" id="home-feature">
+                <img src="img/demo/home.PNG" alt="Главный экран">
+                <h3>Простой интерфейс</h3>
+                <p>Минималистичный и интуитивно понятный дизайн делает создание QR-кодов максимально простым.</p>
+                <button class="download-btn" onclick="downloadFeature('home-feature')">Скачать карточку</button>
+            </div>
+
+            <div class="feature-card" id="qr-feature">
+                <img src="img/demo/qr-code.PNG" alt="QR-код">
+                <h3>Мгновенная генерация</h3>
+                <p>Создавайте QR-коды для любых ссылок и текста в один клик. Возможность скачать код в высоком качестве.
+                </p>
+                <button class="download-btn" onclick="downloadFeature('qr-feature')">Скачать карточку</button>
+            </div>
+
+            <div class="feature-card" id="dark-feature">
+                <img src="img/demo/dark-theme.PNG" alt="Тёмная тема">
+                <h3>Тёмная тема</h3>
+                <p>Работайте комфортно в любое время суток благодаря поддержке светлой и тёмной темы.</p>
+                <button class="download-btn" onclick="downloadFeature('dark-feature')">Скачать карточку</button>
+            </div>
+
+            <div class="feature-card" id="lang-feature">
+                <img src="img/demo/eng-lang.PNG" alt="Мультиязычность">
+                <h3>Мультиязычность</h3>
+                <p>Поддержка русского и английского языков. Интерфейс автоматически подстраивается под ваши
+                    предпочтения.</p>
+                <button class="download-btn" onclick="downloadFeature('lang-feature')">Скачать карточку</button>
+            </div>
+
+            <div class="feature-card" id="customize-feature">
+                <img src="img/demo/customize.PNG" alt="Кастомизация">
+                <h3>Кастомизация</h3>
+                <p>Настраивайте внешний вид QR-кода: цвет точек, фона и добавляйте свой логотип для уникального дизайна.
+                </p>
+                <button class="download-btn" onclick="downloadFeature('customize-feature')">Скачать карточку</button>
+            </div>
+
+            <div class="feature-card" id="history-feature">
+                <img src="img/demo/history.PNG" alt="История генерации">
+                <h3>История генерации</h3>
+                <p>Доступ к истории созданных QR-кодов позволяет быстро вернуться к предыдущим работам.</p>
+                <button class="download-btn" onclick="downloadFeature('history-feature')">Скачать карточку</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        // Проверяем и применяем тему
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+
+        // Функция для скачивания карточки как изображения
+        function downloadFeature(featureId) {
+            const element = document.getElementById(featureId);
+            const button = element.querySelector('.download-btn');
+
+            // Скрываем кнопку
+            button.style.display = 'none';
+
+            html2canvas(element, {
+                backgroundColor: 'white',
+                scale: 2, // Увеличиваем качество
+                logging: false,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `kurkod-${featureId}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+
+                // Возвращаем кнопку обратно
+                button.style.display = 'inline-flex';
+            });
+        }
+    </script>
+</body>
+
+</html>

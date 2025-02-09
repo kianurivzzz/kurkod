@@ -39,7 +39,8 @@
 			dotsColor: 'Цвет точек',
 			backgroundColor: 'Цвет фона',
 			apply: 'Применить',
-			reset: 'Сбросить'
+			reset: 'Сбросить',
+			features: 'Возможности',
 		},
 		en: {
 			title: 'Kurkod - Simple QR Code Generator',
@@ -80,7 +81,8 @@
 			dotsColor: 'Dots Color',
 			backgroundColor: 'Background Color',
 			apply: 'Apply',
-			reset: 'Reset'
+			reset: 'Reset',
+			features: 'Features',
 		},
 	};
 })();

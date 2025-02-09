@@ -1,0 +1,24 @@
+:root {
+	/* Светлая тема */
+	--bg-primary: #f5f5f7;
+	--bg-secondary: #ffffff;
+	--text-primary: #1d1d1f;
+	--text-secondary: #86868b;
+	--border-color: #d2d2d7;
+	--button-primary: #0071e3;
+	--button-hover: #0077ED;
+	--button-success: #34c759;
+	--button-success-hover: #32d75c;
+	--shadow-color: rgba(0, 0, 0, 0.12);
+	--focus-shadow: rgba(0, 113, 227, 0.1);
+
+	/* Like service buttons */
+	--like-primary: #ff9500;
+	--like-primary-hover: #ffa530;
+	--like-thanks: #ff375f;
+	--like-thanks-hover: #ff4f75;
+	--like-share: #bf5af2;
+	--like-share-hover: #c76df4;
+	--like-questions: #64d2ff;
+	--like-questions-hover: #70d7ff;
+}
