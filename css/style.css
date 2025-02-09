@@ -8,9 +8,19 @@
 	--button-primary: #0071e3;
 	--button-hover: #0077ED;
 	--button-success: #34c759;
-	--button-success-hover: #30D158;
+	--button-success-hover: #32d75c;
 	--shadow-color: rgba(0, 0, 0, 0.12);
 	--focus-shadow: rgba(0, 113, 227, 0.1);
+
+	/* Like service buttons */
+	--like-primary: #ff9500;
+	--like-primary-hover: #ffa530;
+	--like-thanks: #ff375f;
+	--like-thanks-hover: #ff4f75;
+	--like-share: #bf5af2;
+	--like-share-hover: #c76df4;
+	--like-questions: #64d2ff;
+	--like-questions-hover: #70d7ff;
 }
 
 /* Класс для плавных переходов при смене темы */
@@ -35,6 +45,16 @@
 	--button-success-hover: #32d75c;
 	--shadow-color: rgba(0, 0, 0, 0.3);
 	--focus-shadow: rgba(10, 132, 255, 0.3);
+
+	/* Like service buttons */
+	--like-primary: #ff9f0a;
+	--like-primary-hover: #ffb340;
+	--like-thanks: #ff375f;
+	--like-thanks-hover: #ff4f75;
+	--like-share: #bf5af2;
+	--like-share-hover: #c76df4;
+	--like-questions: #64d2ff;
+	--like-questions-hover: #70d7ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -319,6 +339,99 @@ footer a:hover {
 .developer {
 	margin-top: 15px;
 	font-size: 13px;
+}
+
+/* Like Service Section */
+.like-service {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.like-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background: var(--like-primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.like-btn:hover {
+    background: var(--like-primary-hover);
+    transform: translateY(-1px);
+}
+
+.like-btn:active {
+    transform: translateY(1px);
+}
+
+.like-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: var(--bg-secondary);
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.like-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+}
+
+/* Specific colors for each option */
+.like-option:nth-child(1) {
+    background: var(--like-thanks);
+}
+
+.like-option:nth-child(1):hover {
+    background: var(--like-thanks-hover);
+}
+
+.like-option:nth-child(2) {
+    background: var(--like-share);
+}
+
+.like-option:nth-child(2):hover {
+    background: var(--like-share-hover);
+}
+
+.like-option:nth-child(3) {
+    background: var(--like-questions);
+}
+
+.like-option:nth-child(3):hover {
+    background: var(--like-questions-hover);
+}
+
+.like-option:hover {
+    transform: translateY(-1px);
+}
+
+.like-option:active {
+    transform: translateY(1px);
+}
+
+.hidden {
+    display: none !important;
 }
 
 /* Планшеты */
