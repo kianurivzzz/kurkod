@@ -852,6 +852,28 @@ footer a:hover {
 	display: none !important;
 }
 
+.small-feature {
+	font-size: 12px;
+	padding: 4px 8px;
+	border: none;
+	background: transparent;
+	color: var(--text-secondary);
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.small-feature:hover {
+	background: var(--bg-primary);
+}
+
+.alpha-badge {
+	background: var(--button-primary);
+	color: white;
+	padding: 1px 4px;
+	border-radius: 4px;
+	font-size: 10px;
+}
+
 @keyframes fadeIn {
 	from {
 		opacity: 0;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurkod - Redirect</title>
+    <script>
+        // Получаем ID из хэша URL
+        const id = window.location.hash.slice(1);
+        if (id) {
+            // Получаем сохраненные редиректы
+            const redirects = JSON.parse(localStorage.getItem('qr_redirects') || '{}');
+            const redirect = redirects[id];
+            
+            if (redirect && redirect.targetUrl) {
+                // Если URL найден, делаем редирект
+                window.location.href = redirect.targetUrl;
+            } else {
+                // Если URL не найден, показываем ошибку
+                document.body.innerHTML = '<h1>QR код не найден</h1>';
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f5f5f7;
+            color: #1d1d1f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Перенаправление...</h1>
+</body>
+</html>

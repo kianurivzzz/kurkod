@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-	// Ждем загрузки translations
+	// Ждёт загрузки translations
 	if (typeof window.translations === 'undefined') {
 		console.error('Translations not loaded!');
 		return;
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 
-		// Обновляем title
+		// Обновляет title
 		document.title = translations[lang].title;
 	}
 
@@ -72,11 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			console.log('Language button clicked:', lang);
 			if (lang === currentLang) return;
 
-			// Обновляем активную кнопку
+			// Обновляет активную кнопку
 			langButtons.forEach(b => b.classList.remove('active'));
 			btn.classList.add('active');
 
-			// Обновляем язык
+			// Обновляет язык
 			currentLang = lang;
 			localStorage.setItem('language', lang);
 			translateUI(lang);
@@ -132,14 +132,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		ctx.closePath();
 		ctx.fill();
 
-		// Рисуем QR-код с антиалиасингом
+		// Рисует QR-код с антиалиасингом
 		ctx.fillStyle = dotsColor;
 		for (let row = 0; row < qrSize; row++) {
 			for (let col = 0; col < qrSize; col++) {
 				if (qr.isDark(row, col)) {
 					const x = col * scale + padding;
 					const y = row * scale + padding;
-					const size = scale * 0.95; // Немного уменьшаем размер точек для лучшего вида
+					const size = scale * 0.95; // Немного уменьшает размер точек для лучшего вида
 					const dotRadius = scale * 0.1; // Радиус закругления точек
 
 					ctx.beginPath();
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			const logoY = (canvas.height - logoSize) / 2;
 			const logoPadding = Math.floor(logoSize * 0.15);
 
-			// Создаем белый фон под логотипом
+			// Создаёт белый фон под логотипом
 			ctx.fillStyle = bgColor;
 			const logoBackRadius = logoPadding;
 			ctx.beginPath();
@@ -264,15 +264,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		createQRCodeWithLogo(text);
-		// Add to history only if not generated from history
+		// Добавляет в историю
 		if (window.qrHistory && !window.fromHistory) {
 			window.qrHistory.addItem(text);
 		}
-		// Reset the flag
+		// Обновляет флаг
 		window.fromHistory = false;
+
+		// Скрывает кнопку управления при обычном QR
+		document.getElementById('manage-dynamic-btn').classList.add('hidden');
 	}
 
-	// Делаем функцию доступной глобально
+	// Делает функцию доступной глобально
 	window.generateQRCode = generateQRCode;
 
 	function downloadQRCode() {
@@ -298,7 +301,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	downloadBtn.addEventListener('click', downloadQRCode);
 
-	// Добавляем эффект при фокусе на input
+	// Функционал динамических QR-кодов
+	function generateDynamicQR(targetUrl) {
+		// Генерируем уникальный ID (6 символов)
+		const id = Math.random().toString(36).substring(2, 8);
+
+		// Сохраняем соответствие в localStorage
+		const redirects = JSON.parse(
+			localStorage.getItem('qr_redirects') || '{}'
+		);
+		redirects[id] = {
+			targetUrl,
+			createdAt: new Date().toISOString(),
+		};
+		localStorage.setItem('qr_redirects', JSON.stringify(redirects));
+
+		// Создаёт QR-код с URL для редиректа
+		const redirectUrl = `${window.location.origin}${window.location.pathname}redirect.html#${id}`;
+		generateQRCode(redirectUrl);
+
+		// Показывает кнопку управления
+		const manageDynamicBtn = document.getElementById('manage-dynamic-btn');
+		manageDynamicBtn.classList.remove('hidden');
+		manageDynamicBtn.setAttribute('data-qr-id', id);
+	}
+
+	// Обработчик для кнопки динамического QR
+	const dynamicQrBtn = document.getElementById('dynamic-qr-btn');
+	dynamicQrBtn.addEventListener('click', () => {
+		const url = qrText.value.trim();
+		if (!url) return;
+		generateDynamicQR(url);
+	});
+
+	// Обработчик для кнопки управления
+	const manageDynamicBtn = document.getElementById('manage-dynamic-btn');
+	manageDynamicBtn.addEventListener('click', () => {
+		const id = manageDynamicBtn.getAttribute('data-qr-id');
+		if (!id) return;
+
+		const redirects = JSON.parse(
+			localStorage.getItem('qr_redirects') || '{}'
+		);
+		const redirect = redirects[id];
+		if (!redirect) return;
+
+		const newUrl = prompt('Введите новый URL:', redirect.targetUrl);
+		if (!newUrl) return;
+
+		redirects[id].targetUrl = newUrl;
+		localStorage.setItem('qr_redirects', JSON.stringify(redirects));
+		alert('URL успешно обновлен!');
+	});
+
+	// Добавляет эффект при фокусе на input
 	qrText.addEventListener('focus', () => {
 		qrText.parentElement.classList.add('focused');
 	});

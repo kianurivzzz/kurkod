@@ -28,7 +28,7 @@ function initTheme() {
 	let theme = localStorage.getItem('theme');
 	console.log('Theme from localStorage:', theme);
 
-	// Если тема не сохранена, проверяем системные настройки
+	// Если тема не сохранена, проверяет системные настройки
 	if (!theme) {
 		const prefersDark = window.matchMedia(
 			'(prefers-color-scheme: dark)'
@@ -40,12 +40,12 @@ function initTheme() {
 	setTheme(theme);
 }
 
-// Запускаем инициализацию при загрузке страницы
+// Запускает инициализацию при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('DOM loaded, setting up theme system');
 	initTheme();
 
-	// Добавляем обработчик для кнопки переключения темы
+	// Добавляет обработчик для кнопки переключения темы
 	const themeBtn = document.querySelector('.theme-btn');
 	console.log('Theme button found:', themeBtn);
 
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		console.error('Theme button not found!');
 	}
 
-	// Слушаем изменения системной темы
+	// Слушает изменения системной темы
 	window
 		.matchMedia('(prefers-color-scheme: dark)')
 		.addEventListener('change', e => {

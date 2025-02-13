@@ -119,11 +119,16 @@
                 <input type="text" id="qr-text" data-translate="placeholder" placeholder="Введите текст или URL"
                     aria-label="Текст для QR-кода">
                 <button id="generate-btn" data-translate="generate">Создать QR-код</button>
+                <button id="dynamic-qr-btn" class="small-feature">
+                    <span data-translate="dynamic">Создать динамический QR-код</span> <span class="alpha-badge"
+                        data-translate="alpha">α</span>
+                </button>
             </section>
             <section class="qr-container" aria-label="QR-код">
                 <div id="qr-code" role="img" aria-label="Сгенерированный QR-код"></div>
                 <button id="download-btn" class="hidden" data-translate="download">Скачать QR-код</button>
                 <button id="customize-btn" class="hidden text-button" data-translate="customize">Настроить</button>
+                <button id="manage-dynamic-btn" class="hidden text-button" data-translate="manageDynamic">Управление ссылкой</button>
 
                 <div id="customize-panel" class="customize-panel hidden">
                     <div class="customize-header">
