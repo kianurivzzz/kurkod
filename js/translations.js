@@ -31,6 +31,10 @@
 			deleteItem: 'Удалить',
 			today: 'Сегодня',
 			yesterday: 'Вчера',
+			// Changelog translations
+			changelogTitle: 'История обновлений',
+			changelogVersion: 'Версия',
+			changelogDate: 'Дата',
 			// Customization translations
 			customize: 'Настроить',
 			customizeTitle: 'Настройка QR-кода',
@@ -76,6 +80,10 @@
 			deleteItem: 'Delete',
 			today: 'Today',
 			yesterday: 'Yesterday',
+			// Changelog translations
+			changelogTitle: 'Changelog',
+			changelogVersion: 'Version',
+			changelogDate: 'Date',
 			// Customization translations
 			customize: 'Customize',
 			customizeTitle: 'QR Code Customization',

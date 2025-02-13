@@ -128,7 +128,8 @@
                 <div id="qr-code" role="img" aria-label="Сгенерированный QR-код"></div>
                 <button id="download-btn" class="hidden" data-translate="download">Скачать QR-код</button>
                 <button id="customize-btn" class="hidden text-button" data-translate="customize">Настроить</button>
-                <button id="manage-dynamic-btn" class="hidden text-button" data-translate="manageDynamic">Управление ссылкой</button>
+                <button id="manage-dynamic-btn" class="hidden text-button" data-translate="manageDynamic">Управление
+                    ссылкой</button>
 
                 <div id="customize-panel" class="customize-panel hidden">
                     <div class="customize-header">
@@ -222,6 +223,21 @@
     <script src="js/customize.js"></script>
     <script src="js/app.js"></script>
     <script src="js/like-service.js"></script>
+
+    <div id="changelog-panel" class="changelog-panel hidden">
+        <div class="changelog-header">
+            <h3 data-translate="changelogTitle">История обновлений</h3>
+            <button class="close-btn" id="close-changelog-btn">×</button>
+        </div>
+        <div id="changelog-content" class="changelog-content">
+            <!-- Сюда добавляются обновления из changelog-data.js -->
+        </div>
+    </div>
+
+    <button class="changelog-button" id="changelog-btn">
+        <span data-translate="changelogTitle">История обновлений</span>
+    </button>
+
     <a href="https://github.com/kianurivzzz/kurkod" target="_blank" rel="noopener" class="github-button"
         aria-label="View source code on GitHub">
         <svg viewBox="0 0 16 16">
@@ -230,6 +246,8 @@
         </svg>
         <span data-translate="viewSource">Исходный код</span>
     </a>
+    <script src="js/changelog-data.js"></script>
+    <script src="js/changelog.js"></script>
 </body>
 
 </html>
