@@ -391,4 +391,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	qrText.addEventListener('blur', () => {
 		qrText.parentElement.classList.remove('focused');
 	});
+
+	// Обработчик для кнопки опроса
+	const surveyBtn = document.getElementById('survey-btn');
+	if (surveyBtn) {
+		surveyBtn.addEventListener('click', () => {
+			window.location.href = 'survey.html';
+		});
+	}
 });

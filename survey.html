@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title data-translate="surveyTitle">Опрос Kurkod - Помоги нам стать лучше</title>
+    <meta name="title" content="Опрос Kurkod - Помоги нам стать лучше">
+    <meta name="description" content="Пройди короткий опрос о сервисе Kurkod и QR-кодах. Твоё мнение важно для нас!">
+    <meta name="keywords" content="kurkod, опрос, qr код, генератор qr кодов">
+    <meta name="author" content="Kurkod">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kianurivzzz.github.io/kurkod/survey.html">
+    <meta property="og:title" content="Опрос Kurkod - Помоги нам стать лучше">
+    <meta property="og:description"
+        content="Пройди короткий опрос о сервисе Kurkod и QR-кодах. Твоё мнение важно для нас!">
+    <meta property="og:image" content="img/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kianurivzzz.github.io/kurkod/survey.html">
+    <meta property="twitter:title" content="Опрос Kurkod - Помоги нам стать лучше">
+    <meta property="twitter:description"
+        content="Пройди короткий опрос о сервисе Kurkod и QR-кодах. Твоё мнение важно для нас!">
+    <meta property="twitter:image" content="img/og-image.png">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/survey.css">
+</head>
+
+<body>
+    <div class="container">
+        <main class="card">
+            <header class="card-header">
+                <div class="logo">
+                    <a href="index.html" title="Kurkod - Генератор QR-кодов">
+                        <img src="img/chicken.png" alt="Kurkod Logo" class="logo-img" width="40" height="40">
+                        <h1>Kurkod</h1>
+                    </a>
+                </div>
+            </header>
+
+            <section class="survey-intro intro">
+                <h2>🎉 Привет! Мы рады тебя видеть!</h2>
+                <p>Этот небольшой опрос поможет сделать Куркод ещё лучше. Обещаем, это займёт меньше минуты!</p>
+            </section>
+
+            <form id="survey-form" class="survey-form">
+                <div class="survey-step" data-step="1">
+                    <h3>Уже пробовал(а) использовать Куркод?</h3>
+                    <div class="options-group">
+                        <label class="option-card">
+                            <input type="radio" name="used_kurkod" value="yes">
+                            <span class="option-text">Да</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="used_kurkod" value="no">
+                            <span class="option-text">Нет</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="survey-step hidden" data-step="2">
+                    <h3>Оцени опыт использования Куркода</h3>
+                    <div class="rating-group">
+                        <div class="rating-scale">
+                            <input type="radio" name="rating" value="1" id="rating-1">
+                            <label for="rating-1">1</label>
+                            <input type="radio" name="rating" value="2" id="rating-2">
+                            <label for="rating-2">2</label>
+                            <input type="radio" name="rating" value="3" id="rating-3">
+                            <label for="rating-3">3</label>
+                            <input type="radio" name="rating" value="4" id="rating-4">
+                            <label for="rating-4">4</label>
+                            <input type="radio" name="rating" value="5" id="rating-5">
+                            <label for="rating-5">5</label>
+                            <input type="radio" name="rating" value="6" id="rating-6">
+                            <label for="rating-6">6</label>
+                            <input type="radio" name="rating" value="7" id="rating-7">
+                            <label for="rating-7">7</label>
+                            <input type="radio" name="rating" value="8" id="rating-8">
+                            <label for="rating-8">8</label>
+                            <input type="radio" name="rating" value="9" id="rating-9">
+                            <label for="rating-9">9</label>
+                            <input type="radio" name="rating" value="10" id="rating-10">
+                            <label for="rating-10">10</label>
+                        </div>
+                        <div class="rating-comment"></div>
+                        <div class="rating-labels">
+                            <span>Так себе</span>
+                            <span>Супер!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="survey-step hidden" data-step="3">
+                    <h3>Какие функции генератора QR-кодов нужны именно тебе?</h3>
+                    <div class="options-group checkbox-group">
+                        <label class="option-card">
+                            <input type="checkbox" name="features" value="dynamic">
+                            <span class="option-text">Динамические QR-коды</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="features" value="logo">
+                            <span class="option-text">Добавление логотипа</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="features" value="design">
+                            <span class="option-text">Дизайн QR-кода</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="features" value="analytics">
+                            <span class="option-text">Аналитика сканирований</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="features" value="bulk">
+                            <span class="option-text">Массовая генерация</span>
+                        </label>
+                        <label class="option-card custom-option">
+                            <input type="checkbox" name="features" value="custom" id="custom-feature-checkbox">
+                            <span class="option-text">Свой вариант</span>
+                            <input type="text" class="custom-feature-input hidden" placeholder="Какая функция нужна?"
+                                maxlength="100">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="survey-step hidden" data-step="4">
+                    <h3>Зачем тебе нужен этот функционал?</h3>
+                    <div class="options-group checkbox-group">
+                        <label class="option-card">
+                            <input type="checkbox" name="purpose" value="business">
+                            <span class="option-text">Для бизнеса</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="purpose" value="personal">
+                            <span class="option-text">Для личного использования</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="purpose" value="education">
+                            <span class="option-text">Для учёбы</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="purpose" value="fun">
+                            <span class="option-text">Для развлечения</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="survey-step hidden" data-step="5">
+                    <h3>Как часто используешь генераторы QR-кодов?</h3>
+                    <div class="options-group">
+                        <label class="option-card">
+                            <input type="radio" name="frequency" value="daily">
+                            <span class="option-text">Каждый день</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="frequency" value="weekly">
+                            <span class="option-text">Раз в неделю</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="frequency" value="monthly">
+                            <span class="option-text">Раз в месяц</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="frequency" value="rarely">
+                            <span class="option-text">Очень редко</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="survey-step hidden" data-step="6">
+                    <h3>Сколько ты готов платить за нужный тебе функционал?</h3>
+                    <div class="price-slider">
+                        <input type="range" id="price-range" name="price" min="0" max="1000" step="100" value="0">
+                        <div class="price-value">
+                            <span id="price-display">0</span>
+                        </div>
+                        <div class="price-labels">
+                            <span>Только бесплатно</span>
+                            <span>1000₽</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="survey-step hidden" data-step="7">
+                    <h3>Есть что добавить?</h3>
+                    <p class="comment-hint">Можешь рассказать, чего тебе не хватает, что понравилось или отправить мем с
+                        котом<br>Только мем ссылкой, пожалуйста</p>
+                    <textarea name="comment" rows="4" placeholder="Твой комментарий или ссылка на мем..."></textarea>
+                </div>
+
+                <div class="survey-step hidden" data-step="8">
+                    <div class="thank-you">
+                        <h2>🎊 Спасибо за участие!</h2>
+                        <p>Твои ответы помогут сделать Куркод ещё лучше</p>
+                        <div id="share-qr"></div>
+                        <p class="share-hint">Поделись Куркодом с друзьями!</p>
+                    </div>
+                </div>
+
+                <div class="survey-controls">
+                    <button type="button" id="prev-btn" class="hidden">Назад</button>
+                    <button type="button" id="next-btn">Далее</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/survey.js"></script>
+</body>
+
+</html>

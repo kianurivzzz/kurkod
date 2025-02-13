@@ -1116,3 +1116,28 @@ footer a:hover {
 		transform: translateY(0);
 	}
 }
+
+/* Survey Prompt */
+.survey-prompt {
+	margin: 16px 0;
+	text-align: center;
+}
+
+.survey-prompt p {
+	color: var(--text-secondary);
+	margin-bottom: 8px;
+	font-size: 14px;
+}
+
+.survey-prompt .text-button {
+	font-size: 14px;
+	padding: 4px 8px;
+	background: transparent;
+	color: var(--button-primary);
+	text-decoration: none;
+}
+
+.survey-prompt .text-button:hover {
+	color: var(--button-hover);
+	transform: none;
+}

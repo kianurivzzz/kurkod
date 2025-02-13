@@ -26,8 +26,12 @@
 			viewSource: 'Исходный код',
 			// Alpha notice translations
 			alphaNoticeTitle: 'Альфа-версия',
-			alphaNoticeText: 'Функция динамических QR-кодов находится в альфа-версии и доступна только в текущем браузере.',
-			alphaQuestion: 'Хотели бы вы видеть полноценные динамические QR-коды в будущем?',
+			alphaNoticeText:
+				'Функция динамических QR-кодов находится в альфа-версии и доступна только в текущем браузере.',
+			alphaQuestion:
+				'Хотели бы вы видеть полноценные динамические QR-коды в будущем?',
+			surveyPrompt:
+				'Помоги Куркоду стать лучше! Пройди короткий опрос о сервисе и QR-кодах',
 			takeSurvey: 'Пройти опрос',
 			// History translations
 			historyTitle: 'История',
@@ -80,8 +84,12 @@
 			viewSource: 'Source code',
 			// Alpha notice translations
 			alphaNoticeTitle: 'Alpha Version',
-			alphaNoticeText: 'The dynamic QR codes feature is in alpha and only available in the current browser.',
-			alphaQuestion: 'Would you like to see full-featured dynamic QR codes in the future?',
+			alphaNoticeText:
+				'The dynamic QR codes feature is in alpha and only available in the current browser.',
+			alphaQuestion:
+				'Would you like to see full-featured dynamic QR codes in the future?',
+			surveyPrompt:
+				'Help Kurkod improve! Take a quick survey about the service and QR codes',
 			takeSurvey: 'Take Survey',
 			// History translations
 			historyTitle: 'History',
