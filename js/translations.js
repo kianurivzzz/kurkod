@@ -24,6 +24,11 @@
 			haveQuestions: 'Есть вопросы',
 			linkCopied: 'Ссылка скопирована в буфер обмена!',
 			viewSource: 'Исходный код',
+			// Alpha notice translations
+			alphaNoticeTitle: 'Альфа-версия',
+			alphaNoticeText: 'Функция динамических QR-кодов находится в альфа-версии и доступна только в текущем браузере.',
+			alphaQuestion: 'Хотели бы вы видеть полноценные динамические QR-коды в будущем?',
+			takeSurvey: 'Пройти опрос',
 			// History translations
 			historyTitle: 'История',
 			clearHistory: 'Очистить',
@@ -73,6 +78,11 @@
 			haveQuestions: 'Have questions',
 			linkCopied: 'Link copied to clipboard!',
 			viewSource: 'Source code',
+			// Alpha notice translations
+			alphaNoticeTitle: 'Alpha Version',
+			alphaNoticeText: 'The dynamic QR codes feature is in alpha and only available in the current browser.',
+			alphaQuestion: 'Would you like to see full-featured dynamic QR codes in the future?',
+			takeSurvey: 'Take Survey',
 			// History translations
 			historyTitle: 'History',
 			clearHistory: 'Clear',

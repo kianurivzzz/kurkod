@@ -1,6 +1,6 @@
 const changelogData = [
 	{
-		version: '1.0.1',
+		version: '1.2.0',
 		date: '13.02.2025',
 		changes: [
 			'Исправлены мелкие ошибки',

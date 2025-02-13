@@ -324,7 +324,36 @@ document.addEventListener('DOMContentLoaded', () => {
 		const manageDynamicBtn = document.getElementById('manage-dynamic-btn');
 		manageDynamicBtn.classList.remove('hidden');
 		manageDynamicBtn.setAttribute('data-qr-id', id);
+
+		// Показываем модальное окно
+		showAlphaNotice();
 	}
+
+	// Функционал модального окна для альфа-уведомления
+	const alphaModal = document.getElementById('alpha-modal');
+	const closeAlphaModal = document.getElementById('close-alpha-modal');
+	const alphaSurveyBtn = document.getElementById('alpha-survey-btn');
+
+	function showAlphaNotice() {
+		alphaModal.classList.remove('hidden');
+	}
+
+	function hideAlphaNotice() {
+		alphaModal.classList.add('hidden');
+	}
+
+	closeAlphaModal.addEventListener('click', hideAlphaNotice);
+	alphaSurveyBtn.addEventListener('click', () => {
+		// В будущем здесь будет ссылка на опрос
+		hideAlphaNotice();
+	});
+
+	// Закрытие модального окна при клике вне его
+	alphaModal.addEventListener('click', (e) => {
+		if (e.target === alphaModal) {
+			hideAlphaNotice();
+		}
+	});
 
 	// Обработчик для кнопки динамического QR
 	const dynamicQrBtn = document.getElementById('dynamic-qr-btn');
