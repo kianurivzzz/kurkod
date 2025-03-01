@@ -344,7 +344,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	closeAlphaModal.addEventListener('click', hideAlphaNotice);
 	alphaSurveyBtn.addEventListener('click', () => {
-		// В будущем здесь будет ссылка на опрос
+		// Перенаправление на страницу опроса
+		window.location.href = 'survey.html';
 		hideAlphaNotice();
 	});
 

@@ -67,6 +67,26 @@
     background: var(--bg-primary);
 }
 
+.option-card .option-text {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .option-card .option-text,
+[data-theme="dark"] .rating-comment,
+[data-theme="dark"] .rating-scale label,
+[data-theme="dark"] .custom-feature-input {
+    color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .option-card .option-text,
+    :root:not([data-theme="light"]) .rating-comment,
+    :root:not([data-theme="light"]) .rating-scale label,
+    :root:not([data-theme="light"]) .custom-feature-input {
+        color: white;
+    }
+}
+
 .rating-group {
     text-align: center;
 }
@@ -357,4 +377,18 @@ textarea:focus {
 
 .survey-step:not(.hidden) {
     animation: fadeIn 0.5s ease-out;
+}
+
+[data-theme="dark"] .thank-you-message h3,
+[data-theme="dark"] .thank-you-message p,
+[data-theme="dark"] .share-section h4 {
+    color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .thank-you-message h3,
+    :root:not([data-theme="light"]) .thank-you-message p,
+    :root:not([data-theme="light"]) .share-section h4 {
+        color: white;
+    }
 }
