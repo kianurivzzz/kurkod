@@ -1,6 +1,6 @@
 const changelogData = [
 	{
-		version: '1.3.0',
+		version: '1.2.1',
 		date: '01.03.2025',
 		changes: [
 			'Исправлены стили и ссылки',
